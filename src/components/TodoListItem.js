@@ -1,15 +1,16 @@
 import React from "react";
 
-function TodoListItem(props) {
+function TodoListItem(props) { 
+
     return (
         <div className="todo-item">
             <li>
-                <input type="checkbox" />
-                {`id: ${props.id} `}
+                <input type="checkbox" checked={props.item.completed} onChange={() => props.handleChange(props.item.id)}/>
+                {`id: ${props.item.id} `}
                 <br/>
-                {`name: ${props.item}`}
+                {`name: ${props.item.item}`}
                 <p>
-                    {`description: ${props.description}`}
+                    {`description: ${props.item.description}`}
                 </p>
                 <hr/>
             </li>
