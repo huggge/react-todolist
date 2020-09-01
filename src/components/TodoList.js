@@ -12,8 +12,8 @@ class TodoList extends React.Component {
         super()
         this.state = {
             todos: itemsData
-
         }
+        
         this.handleChange = this.handleChange.bind(this)
     }
 
