@@ -2,7 +2,7 @@ import React from "react";
 
 function AddButton(props) {
     return (
-        <button onClick={props.addTodoItem}>Add todo item</button>
+        <button className="button" onClick={props.addTodoItem}>Add item</button>
     )
 }
 

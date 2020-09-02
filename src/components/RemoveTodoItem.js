@@ -2,7 +2,7 @@ import React from "react";
 
 function RemoveTodoItem(props) {
     return (
-        <button onClick={props.removeTodoItem}>Remove marked items</button>
+        <button className="button" onClick={props.removeTodoItem}>Remove items</button>
     )
 }
 

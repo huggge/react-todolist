@@ -1,13 +1,13 @@
 import React from "react";
 
-import AddButton from "./AddButton";
 import RemoveTodoItem from "./RemoveTodoItem";
+import InputForm from "./InputForm";
 
 function ControlPanel(props) {
     return (
         <div>
-        <AddButton addTodoItem={props.addTodoItem}/>
         <RemoveTodoItem removeTodoItem={props.removeTodoItem}/>
+        <InputForm addTodoItem={props.addTodoItem}/>
         <br/>
         <hr/>
         <br/>

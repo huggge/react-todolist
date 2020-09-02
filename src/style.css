@@ -36,41 +36,47 @@ body {
     text-align: center;
 }
 
-.form-input-box {
-    background-color: lightgray;
-    color: #333;
-    margin-bottom: 15px;
-    text-align: center;
-    margin: auto;
-    border: 1px solid #333;
-    box-shadow: 5px 10px grey;
-    width: 600px;
-    height: 80px;
-}
-
 .todo-item {
     list-style-type: none;
     text-align: left;
 }
 
-input {
-    height: 100px;
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+ }
+
+ .button {
+    background-color: #555555; /* Green */
+    border: none;
+    margin: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+
+.checkbox {
+    margin: 5px;
+    height: 15px;
 }
 
 p {
-    font-size: 9px;
+    font-size: 7px;
     margin: 0px;
     display: inline;
 }
 
 h5 {
+    font-size: 23px;
     display: inline;
     margin: 0px;
-}
-
-li {
-}
-
-input {
-    height: 25px;
 }

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { v4 } from "uuid";
 
 import TodoListItem from "./TodoListItem";
-import AddButton from "./AddButton";
-import RemoveTodoItem from "./RemoveTodoItem";
 
 import ControlPanel from "./ControlPanel";
 
@@ -40,11 +38,9 @@ function TodoList() {
         setTodoList(result)
     }
 
-
-
     // add todo function
-    const addTodoItem = () => {
-        setTodoList([...todoList, { title: "testing", completed: false, id: v4() }])
+    const addTodoItem = (title) => {
+        setTodoList([...todoList, { title: title, completed: false, id: v4() }])
     }
     return (
         <div>
