@@ -1,49 +1,67 @@
-import React from "react";
-
-import "../style.css";
+import React, { useState } from "react";
+import { v4 } from "uuid";
 
 import TodoListItem from "./TodoListItem";
+import AddButton from "./AddButton";
+import RemoveTodoItem from "./RemoveTodoItem";
+
+import ControlPanel from "./ControlPanel";
 
 // Importing fakedb json.
 import itemsData from "./itemDB"
 
-class TodoList extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            todos: itemsData
-        }
-        
-        this.handleChange = this.handleChange.bind(this)
-    }
 
-    handleChange(id) {
-        this.setState(prevState => {
-            const updatedTodos = prevState.todos.map(todo => {
+function TodoList() {
+    // state
+    const [todoList, setTodoList] = useState([
+        { title: "hejsan", completed: false, id: v4() },
+        { title: "svejsan", completed: false, id: v4() },
+        { title: "tjolahoppsan", completed: false, id: v4() },
+        { title: "tjenare", completed: false, id: v4() }
+    ]);
+
+    // change checkbox
+    function handleChange(id) {
+
+        setTodoList(todoList => {
+            const updatedTodoList = todoList.map(todo => {
                 if (todo.id === id) {
                     todo.completed = !todo.completed
                 }
                 return todo
             })
-            return {
-                todos: updatedTodos
-            }
+            return updatedTodoList
         })
+
     }
 
-    render() {
-        const todoItems = this.state.todos.map(
-            (item) => {
-            return <TodoListItem key={item.id} item={item} handleChange={this.handleChange}/>
-            })
-        return (
+    function removeTodoItem(id) {
+        const result = todoList.filter(todo => todo.completed === false)
+        setTodoList(result)
+    }
+
+
+
+    // add todo function
+    const addTodoItem = () => {
+        setTodoList([...todoList, { title: "testing", completed: false, id: v4() }])
+    }
+    return (
+        <div>
+            <div className="button-div">
+                <ControlPanel addTodoItem={addTodoItem} removeTodoItem={removeTodoItem}/>
+            </div>
             <div className="todo-list">
                 <ul>
-                    {todoItems}
+                    {todoList.map(todo => {
+                        return (
+                            <TodoListItem key={todo.id} completed={todo.completed} title={todo.title} id={todo.id} handleChange={handleChange}></TodoListItem>
+                        )
+                    })}
                 </ul>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default TodoList;
