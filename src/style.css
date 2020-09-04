@@ -27,7 +27,8 @@ body {
     border: 1px solid #333;
     box-shadow: 5px 10px grey;
     width: 600px;
-    height: 400px;
+    display: flex;
+    flex-direction: column;
 }
 
 .button-div {
@@ -49,10 +50,11 @@ body {
     background-color: #333;
     color: white;
     text-align: center;
- }
+}
 
- .button {
-    background-color: #555555; /* Green */
+.button {
+    background-color: #555555;
+    /* Green */
     border: none;
     margin: 5px;
     color: white;
@@ -61,8 +63,7 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-  }
-
+}
 
 .checkbox {
     margin: 5px;

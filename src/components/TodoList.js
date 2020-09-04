@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { v4 } from "uuid";
 
+import "materialize-css";
+import { CardPanel, Row } from 'react-materialize';
+
 import TodoListItem from "./TodoListItem";
 
 import ControlPanel from "./ControlPanel";
@@ -38,6 +41,7 @@ function TodoList() {
         setTodoList(result)
     }
 
+
     // add todo function
     const addTodoItem = (title) => {
         setTodoList([...todoList, { title: title, completed: false, id: v4() }])
@@ -45,18 +49,24 @@ function TodoList() {
     return (
         <div>
             <div className="button-div">
-                <ControlPanel addTodoItem={addTodoItem} removeTodoItem={removeTodoItem}/>
+                <ControlPanel addTodoItem={addTodoItem} removeTodoItem={removeTodoItem} />
             </div>
             <div className="todo-list">
                 <ul>
                     {todoList.map(todo => {
                         return (
-                            <TodoListItem key={todo.id} completed={todo.completed} title={todo.title} id={todo.id} handleChange={handleChange}></TodoListItem>
+                                <TodoListItem
+                                    key={todo.id}
+                                    completed={todo.completed}
+                                    title={todo.title}
+                                    id={todo.id}
+                                    handleChange={handleChange}>
+                                </TodoListItem>
                         )
                     })}
                 </ul>
             </div>
-        </div>
+        </div >
     )
 }
 
