@@ -57,24 +57,6 @@ body {
     text-align: center;
 }
 
-.button {
-    background-color: #555555;
-    /* Green */
-    border: none;
-    margin: 5px;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-
-.checkbox {
-    margin: 5px;
-    height: 15px;
-}
-
 p {
     font-size: 7px;
     margin: 0px;

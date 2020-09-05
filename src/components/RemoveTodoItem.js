@@ -1,4 +1,5 @@
 import React from "react";
+
 import "materialize-css";
 import { Button } from 'react-materialize';
 
@@ -11,6 +12,7 @@ function RemoveTodoItem(props) {
                 style={{
                     marginRight: '5px'
                 }}
+                tabIndex="1"
                 waves="orange"
                 onClick={props.removeTodoItem}>
                 Remove item

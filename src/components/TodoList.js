@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { v4 } from "uuid";
 
 import "materialize-css";
-import { CardPanel, Button} from 'react-materialize';
+import { CardPanel, Button } from 'react-materialize';
 
 import TodoListItem from "./TodoListItem";
 import ControlPanel from "./ControlPanel";
 
-// Importing fakedb json.
-import {fetching, fetchAsync} from "../fetch";
+import { fetchAsync } from "../fetch";
 
 
 
@@ -16,6 +15,7 @@ function TodoList() {
     // state
     const [todoList, setTodoList] = useState([]);
 
+    // get data and set state
     async function fetchData() {
         const arr = await fetchAsync();
         setTodoList(arr.items)
@@ -37,13 +37,14 @@ function TodoList() {
 
     }
 
+    // remove item and set state
     function removeTodoItem(id) {
         const result = todoList.filter(todo => todo.completed === false)
         setTodoList(result)
     }
 
 
-    // add todo function
+    // add todo function and set state
     const addTodoItem = (title) => {
         setTodoList([{ title: title, completed: false, id: v4() }, ...todoList])
     }
@@ -52,8 +53,8 @@ function TodoList() {
             <div className="button-div">
                 <ControlPanel addTodoItem={addTodoItem} removeTodoItem={removeTodoItem} />
                 <Button onClick={fetchData}>Fetch Todolist from API</Button>
-                <br/>
-                <br/>
+                <br />
+                <br />
             </div>
             <div className="todo-list">
                 <ul>
@@ -72,10 +73,10 @@ function TodoList() {
                     })}
                 </ul>
             </div>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
+            <br />
+            <br />
+            <br />
+            <br />
         </div >
     )
 }

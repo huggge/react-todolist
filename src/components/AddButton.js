@@ -13,6 +13,7 @@ function AddButton(props) {
                     marginRight: '5px',
                 }}
                 waves="orange"
+                tabIndex="0"
                 onClick={props.handleSubmit}
                 type="submit" value="add text">
                 Add item
