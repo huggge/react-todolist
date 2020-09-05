@@ -1,10 +1,11 @@
 import React from "react";
 
+
 function Footer() {
     return (
         <div className="footer">
-            <h3>Footer</h3>
-    <h4>Det här är en footer</h4>
+            <a href="#">Gå till toppen</a>
+    <h6>Copyright Hugo Vestberg 2020</h6>
         </div>
     )
 }

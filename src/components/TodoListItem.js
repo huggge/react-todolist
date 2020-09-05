@@ -1,5 +1,5 @@
 import React from "react";
-import { Checkbox, Card, Row, Col } from 'react-materialize';
+import { Checkbox } from 'react-materialize';
 import { v4 } from "uuid";
 
 function TodoListItem(props) {

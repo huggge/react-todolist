@@ -3,11 +3,11 @@ import React from "react";
 import "../style.css";
 
 function Header() {
-    const headerText = "app";
+    const headerText = "Skriv upp lite grejer";
 
     return (
         <header className="navbar">
-            <h4>Välkommen till min  {`${headerText}`}</h4>
+            <h4>{headerText}</h4>
         </header>
     )
 }

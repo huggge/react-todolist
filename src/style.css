@@ -16,7 +16,7 @@ body {
 }
 
 .todo-list {
-    background-color: whitesmoke;
+    background-color: #E4E2E2;
     color: #333;
     margin-bottom: 15px;
     text-align: center;
@@ -29,6 +29,11 @@ body {
     width: 600px;
     display: flex;
     flex-direction: column;
+}
+
+.input-text {
+    width: 600px !important;
+    text-align: center;
 }
 
 .button-div {

@@ -1,6 +1,6 @@
 import React from "react";
 import "materialize-css";
-import { Button, Card, Row, Col } from 'react-materialize';
+import { Button } from 'react-materialize';
 
 function RemoveTodoItem(props) {
     return (
@@ -11,7 +11,7 @@ function RemoveTodoItem(props) {
                 style={{
                     marginRight: '5px'
                 }}
-                waves="light"
+                waves="orange"
                 onClick={props.removeTodoItem}>
                 Remove item
             </Button>
