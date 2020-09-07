@@ -7,7 +7,7 @@ import { CardPanel, Button } from 'react-materialize';
 import TodoListItem from "./TodoListItem";
 import ControlPanel from "./ControlPanel";
 
-import { fetchAsync } from "../fetch";
+import { fetchAsync, fetching, fetching2 } from "../fetch";
 
 
 
@@ -15,10 +15,17 @@ function TodoList() {
     // state
     const [todoList, setTodoList] = useState([]);
 
-    // get data and set state
-    async function fetchData() {
-        const arr = await fetchAsync();
-        setTodoList(arr.items)
+    // get data and set state with async await
+    async function fetchDataAndSetWithAsync() {
+        const todoListApiArray = await fetchAsync();
+        setTodoList(todoListApiArray.items)
+    }
+
+    // get data and set state via promises
+    const fetchDataAndSetWithPromises = () => {
+        fetching().then(data => {
+            setTodoList(data.items)
+        })
     }
 
 
@@ -52,7 +59,7 @@ function TodoList() {
         <div>
             <div className="button-div">
                 <ControlPanel addTodoItem={addTodoItem} removeTodoItem={removeTodoItem} />
-                <Button onClick={fetchData}>Fetch Todolist from API</Button>
+                <Button onClick={fetchDataAndSetWithAsync}>Fetch Todolist from API</Button>
                 <br />
                 <br />
             </div>
