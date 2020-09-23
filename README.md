@@ -1,7 +1,8 @@
 ## Todo list app
 
 School project created with react and react-materialize.<br />
-in the terminal run:
+<br >/
+To start this project, in terminal run:
 
 ### `npm install`
 ### `npm start`
