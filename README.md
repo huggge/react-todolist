@@ -8,5 +8,5 @@ Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `Preview`
-![Todo list preview](http://privat.bahnhof.se/wb383509/github-prev/todolist-preview.gif)
+![Todo list preview](http://privat.bahnhof.se/wb383509/github-prev/)
 
